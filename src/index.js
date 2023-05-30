@@ -9,36 +9,50 @@ const books = [
     author: "Maximilian Schwarzmuller",
     title: "React Key Concepts: Consolidate your knowledge of React's core features",
     img: "https://m.media-amazon.com/images/I/41rgivhpOaL._SX404_BO1,204,203,200_.jpg",
+    id: 1,
   },
   {
     author: "Robin Wieruch",
     title: "The Road to React: The React.js with Hooks in JavaScript Book (2023 Edition)",
     img: "https://m.media-amazon.com/images/I/61N1Yn4Nf5L._AC_UY327_FMwebp_QL65_.jpg",
+    id: 2,
   },
 ]
 
-// const names = ["john", "peter", "susan"]
 
-// const newNames = names.map((name) => {
-//   console.log(name)
-//   return <h1>{name}</h1>
-// })
-
-// console.log(newNames)
-
-// render component
-// pass properties one by one
 function BookList() {
   return (
     <section className='booklist'>
       {books.map((book) => {
         console.log(book);
-        const { img, title, author } = book;
-        return <Book img={img} title={title} author={author} />;
+        const { img, title, author, id } = book;
+        return <Book img={img} title={title} author={author} key={id}/>;
       })}
     </section>
   );
 }
+
+
+
+
+
+//you will see index, den proteinetai para mono an eimaste sigouroi oti i lista allazei
+// function BookList() {
+//   return (
+//     <section className='booklist'>
+//       {books.map((book, index) => {
+//         console.log(book);
+//         const { img, title, author, id } = book;
+//         return <Book book={book} key={index} />;
+//       })}
+//     </section>
+//   );
+// }
+
+
+
+
+
 
 const Book = (props) => {
   const { img, title, author } = props

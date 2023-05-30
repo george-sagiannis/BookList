@@ -35,14 +35,8 @@ function BookList() {
 
 //perasa ta events
 //an grapso mesa sto input tha fanei sto console
-//an patiso to click me tha mou petaxei to alert
+//an patiso to click me tha mou ferei to console
 const EventExamples = () => {
-  const handleFormInput = () => {
-    console.log('handle form input');
-  };
-  const handleButtonClick = () => {
-    alert('handle button click');
-  };
   return (
     <section>
       <form>
@@ -50,14 +44,21 @@ const EventExamples = () => {
         <input
           type='text'
           name='example'
-          onChange={handleFormInput}
+          onChange={(e) => console.log(e.target.value)}
           style={{ margin: '1rem 0' }}
         />
       </form>
-      <button onClick={handleButtonClick}>click me</button>
+      <button onClick={() => console.log('you clicked me')}>click me</button>
     </section>
   );
 };
+
+// The input field has an onChange event handler that logs the value entered into the input field whenever it changes. The button has an onClick event handler that logs a message when clicked.
+
+// The (e) parameter in the onChange event handler function is a convention to represent the event object. In this case, it represents the synthetic event object for the onChange event. You can access properties of the event object, such as target.value, to get the current value of the input field.
+
+
+
 
 
 const Book = (props) => {

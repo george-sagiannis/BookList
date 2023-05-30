@@ -17,17 +17,27 @@ const books = [
   },
 ]
 
-const names = ["john", "peter", "susan"]
+// const names = ["john", "peter", "susan"]
 
-const newNames = names.map((name) => {
-  console.log(name)
-  return <h1>{name}</h1>
-})
+// const newNames = names.map((name) => {
+//   console.log(name)
+//   return <h1>{name}</h1>
+// })
 
-console.log(newNames)
+// console.log(newNames)
 
+// render component
+// pass properties one by one
 function BookList() {
-  return <section className="booklist">{newNames}</section>
+  return (
+    <section className='booklist'>
+      {books.map((book) => {
+        console.log(book);
+        const { img, title, author } = book;
+        return <Book img={img} title={title} author={author} />;
+      })}
+    </section>
+  );
 }
 
 const Book = (props) => {

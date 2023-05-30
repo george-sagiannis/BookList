@@ -26,31 +26,11 @@ function BookList() {
       {books.map((book) => {
         console.log(book);
         const { img, title, author, id } = book;
-        return <Book img={img} title={title} author={author} key={id}/>;
+            return <Book {...book} key={book.id} />;
       })}
     </section>
   );
 }
-
-
-
-
-
-//you will see index, den proteinetai para mono an eimaste sigouroi oti i lista allazei
-// function BookList() {
-//   return (
-//     <section className='booklist'>
-//       {books.map((book, index) => {
-//         console.log(book);
-//         const { img, title, author, id } = book;
-//         return <Book book={book} key={index} />;
-//       })}
-//     </section>
-//   );
-// }
-
-
-
 
 
 

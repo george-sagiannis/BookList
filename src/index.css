@@ -49,9 +49,10 @@ body {
 .book {
   background: #fff;
   border-radius: 1rem;
-  padding: 2rem;
+  padding: 3rem;
   text-align: center;
-  border: solid 1px #000;
+  /* set relative */
+  position: relative;
 }
 .book img {
   width: 100%;
@@ -67,4 +68,20 @@ body {
   font-size: 0.75rem;
   margin-top: 0.5rem;
   letter-spacing: 2px;
+}
+.number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-top-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background: #c35600;
+  color: #fff;
+}
+h1 {
+  text-align: center;
+  margin-top: 4rem;
+  text-transform: capitalize;
 }
